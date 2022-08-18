@@ -1,0 +1,19 @@
+###
+# HTTP
+###
+server:
+  port: 9090
+
+spring:
+  datasource:
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:escola_de_rock
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
