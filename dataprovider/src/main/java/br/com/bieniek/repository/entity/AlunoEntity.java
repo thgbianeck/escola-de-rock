@@ -14,7 +14,8 @@ public class AlunoEntity {
     private UUID registrationNumber;
     private String name;
 
-    public AlunoEntity() {}
+    public AlunoEntity() {
+    }
 
     public AlunoEntity(Long id, UUID registrationNumber, String name) {
         this(registrationNumber, name);

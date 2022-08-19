@@ -4,19 +4,29 @@ import java.util.UUID;
 
 public class Aluno {
 
-    private final UUID registrationNumber;
-    private final String name;
+    private UUID registrationNumber;
+    private String name;
 
-    public Aluno(String name) {
-        this.name = name;
-        this.registrationNumber = UUID.randomUUID();
+    public static Aluno from (String name) {
+        Aluno aluno = new Aluno();
+        aluno.name = name;
+
+        return aluno;
     }
 
     public UUID getRegistrationNumber() {
         return registrationNumber;
     }
 
+    public void setRegistrationNumber(UUID registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

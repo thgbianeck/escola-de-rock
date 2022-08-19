@@ -1,7 +1,6 @@
 package br.com.bieniek.request.controller;
 
-import br.com.bieniek.aluno.entity.Aluno;
-import br.com.bieniek.aluno.usecase.RegistroAluno;
+import br.com.bieniek.aluno.contract.RegistroAlunoBorda;
 import br.com.bieniek.request.AlunoRequest;
 import br.com.bieniek.request.converter.AlunoRequestConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/alunos")
 public class AlunoController {
 
-    @Autowired
-    private RegistroAluno registroAluno;
+    private final RegistroAlunoBorda registroAluno;
 
     @Autowired
     private AlunoRequestConverter requestConverter;
+
+    public AlunoController(RegistroAlunoBorda registroAluno) {
+        this.registroAluno = registroAluno;
+    }
 
     @GetMapping
     public String doYouHearMe() {
